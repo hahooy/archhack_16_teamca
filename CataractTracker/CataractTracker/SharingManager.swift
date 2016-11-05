@@ -146,6 +146,7 @@ class SharingManager {
                         tempMoments.append(tempMoment)
                     }
                     if tempMoments.count > 0 {
+                        print(tempMoments)
                         print(tempMoments[0].area)
                     }
                     dispatch_async(dispatch_get_main_queue(), {

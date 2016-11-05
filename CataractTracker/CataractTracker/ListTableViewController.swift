@@ -228,7 +228,10 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             descriptionLableHeight = lableSize.height
         }
         
-        if let base64String = moment.thumbnail_base64 {
+        if let base64String = moment.thumbnail_url {
+            let url = URL(string: "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/uploads/hey/images.jpeg")
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            imageView.image = UIImage(data: data!)
             let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
             let decodedImage = UIImage(data: decodedData!)
             let aspectRatio = decodedImage!.size.height / decodedImage!.size.width
@@ -260,27 +263,20 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         cell.nameLabel?.text = moment.username
         cell.descriptionLable?.text = moment.description
         
-        let timeInterval = moment.pub_time_interval
+        let timeInterval = moment.createtime
         populateTimeInterval(cell, timeInterval: timeInterval)
         
-        let base64String = moment.thumbnail_base64
+        let base64String = moment.thumbnail_url
         populateImage(cell, imageString: base64String)
     }
     
     // MARK:- Populate Timeinterval
     
-    func populateTimeInterval(cell: ProfileTableViewCell, timeInterval: NSTimeInterval?) {
+    func populateTimeInterval(cell: ProfileTableViewCell, timeInterval: String?) {
         if timeInterval == nil {
             return
         }
-        let date = NSDate(timeIntervalSince1970: timeInterval!)
-        let formatter = NSDateFormatter()
-        if NSDate().timeIntervalSinceDate(date) < 24 * 60 * 60 {
-            formatter.timeStyle = .ShortStyle
-        } else {
-            formatter.dateStyle = .ShortStyle
-        }
-        cell.timeLabel?.text = formatter.stringFromDate(date)
+        cell.timeLabel?.text = timeInterval
     }
     
     // MARK:- Populate Image
