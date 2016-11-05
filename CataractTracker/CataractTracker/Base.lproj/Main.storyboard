@@ -166,7 +166,7 @@
                     <navigationItem key="navigationItem" title="Title" id="don-Y5-57c">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gOJ-NU-IyF">
                             <connections>
-                                <action selector="addPhotoWithSender:" destination="KsO-nO-oTT" id="lWG-ut-k40"/>
+                                <action selector="addPhoto:" destination="KsO-nO-oTT" id="gdW-gz-JVj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
