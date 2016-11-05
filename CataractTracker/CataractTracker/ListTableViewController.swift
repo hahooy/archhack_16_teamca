@@ -115,7 +115,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         if mediaType.isEqualToString(kUTTypeImage as String) {
             photo = info[UIImagePickerControllerOriginalImage]
                 as? UIImage
-            performSegueWithIdentifier("toEditPhoto", sender: self)
+            performSegueWithIdentifier("toUploadPhoto", sender: self)
         } else if mediaType.isEqualToString(kUTTypeMovie as String) {
             // Code to support video here
         }
@@ -131,17 +131,16 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             switch identifier {
-//            case "toEditPhoto":
-//                if photo == nil {
-//                    return
-//                }
-//                
-//                // send image to edit photo view
-//                if let editVC = segue.destinationViewController as? EditPhotoVC {
-//                    editVC.photo = photo
-//                    editVC.isFromCamera = isFromCamera
-//                    editVC.hidesBottomBarWhenPushed = true
-//                }
+            case "toUploadPhoto":
+                if photo == nil {
+                    return
+                }
+                
+                // send image to edit photo view
+                if let uploadVC = segue.destinationViewController as? UploadViewController {
+                    uploadVC.imageToSubmit = photo
+                    uploadVC.hidesBottomBarWhenPushed = true
+                }
             case "toPhotoDetails":
                 if let mapImageDetailsVC = segue.destinationViewController as? MomentDetailViewController {
                     if let cellData = sender as? Moment {
