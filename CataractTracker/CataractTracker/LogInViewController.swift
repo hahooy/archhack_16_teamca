@@ -9,7 +9,9 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-
+    
+    
+    
     // MARK: - Properties
     @IBAction func signinButton(sender: UIButton) {
         if let username = userIDTextField.text, let password = passcodeTextField.text {
@@ -17,8 +19,11 @@ class LogInViewController: UIViewController {
         }
         
     }
-    @IBOutlet weak var userIDTextField: UITextField!
-    @IBOutlet weak var passcodeTextField: UITextField!
+    
+    @IBOutlet weak var signInBtn: FancyBtn!
+    @IBOutlet weak var signUpBtn: FancyBtn!
+    @IBOutlet weak var userIDTextField: FancyField!
+    @IBOutlet weak var passcodeTextField: FancyField!
     
     struct Constant {
         static let segueToApp = "login to app"

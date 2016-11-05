@@ -35,5 +35,83 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CataractTracker/ProfileTableViewCell.swift"
+            timestampString = "500065881.731629"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ProfileTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CataractTracker.ProfileTableViewCell.descriptionLable.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "CataractTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jysuo/Documents/PersonalProjects/archhack/archhack_16_teamca/CataractTracker/CataractTracker/ProfileTableViewCell.swift"
+                  timestampString = "500065882.391486"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CataractTracker.ProfileTableViewCell.descriptionLable.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UILabel&gt;"
+                  moduleName = "CataractTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jysuo/Documents/PersonalProjects/archhack/archhack_16_teamca/CataractTracker/CataractTracker/ProfileTableViewCell.swift"
+                  timestampString = "500065882.393461"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CataractTracker.ProfileTableViewCell.init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; CataractTracker.ProfileTableViewCell"
+                  moduleName = "CataractTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jysuo/Documents/PersonalProjects/archhack/archhack_16_teamca/CataractTracker/CataractTracker/ProfileTableViewCell.swift"
+                  timestampString = "500065882.395285"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "250">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CataractTracker.ProfileTableViewCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;CataractTracker.ProfileTableViewCell&gt;"
+                  moduleName = "CataractTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jysuo/Documents/PersonalProjects/archhack/archhack_16_teamca/CataractTracker/CataractTracker/ProfileTableViewCell.swift"
+                  timestampString = "500065882.39723"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

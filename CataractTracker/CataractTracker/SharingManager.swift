@@ -41,7 +41,9 @@ class SharingManager {
         static let NumberOfMomentsToFetch: UInt = 10
         static let minimumTimeInterval = 0.000001
         static let maxThumbnailSize: CGFloat = 1000
-        //static let baseServerURL = "http://localhost/archhack/siphon2/"
+
+        // static let baseServerURL = "http://localhost/archhack/siphon2/"
+
         static let baseServerURL = "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/"
         static let loginURL = baseServerURL + "login.php/"
         static let searchUserURL = baseServerURL + "search-user/"
@@ -125,7 +127,10 @@ class SharingManager {
                         if let id = moment["pk_record_ID"] as? Int {
                             tempMoment.id = id
                         }
-                        if let username = moment["title"] as? String {
+                        if let title = moment["title"] as? String {
+                            tempMoment.title = title
+                        }
+                        if let username = moment["username"] as? String {
                             tempMoment.username = username
                         }
                         if let description = moment["description"] as? String {
