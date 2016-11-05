@@ -19,7 +19,6 @@ class MomentDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hey")
         // Do any additional setup after loading the view.
     }
 
