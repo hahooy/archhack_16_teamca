@@ -41,8 +41,8 @@ class SharingManager {
         static let NumberOfMomentsToFetch: UInt = 10
         static let minimumTimeInterval = 0.000001
         static let maxThumbnailSize: CGFloat = 1000
-        //static let baseServerURL = "http://127.0.0.1:8000/locator-cam/"
-        static let baseServerURL = "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/"
+        static let baseServerURL = "http://localhost/archhack/siphon2/"
+        //static let baseServerURL = "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/"
         static let loginURL = baseServerURL + "login.php/"
         static let searchUserURL = baseServerURL + "search-user/"
         static let uploadMomentURL = baseServerURL + "upload.php/"
@@ -71,7 +71,7 @@ class SharingManager {
             let url:NSURL = NSURL(string: SharingManager.Constant.fetchMomentsURL)!
             let session = NSURLSession.sharedSession()
             let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "POST"
+            request.HTTPMethod = "GET"
             request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
             request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -108,38 +108,45 @@ class SharingManager {
             
             let task = session.dataTaskWithRequest(request) {
                 (let data, let response, let error) in
-                
+
                 guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
                     print("error: \(error)")
                     return
                 }
-                
+
                 do {
                     let momentsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSArray
+                    print(momentsJSON)
                     var tempMoments = [Moment]()
                     
                     for moment in momentsJSON {
                         
                         let tempMoment = Moment()
-                        if let id = moment["id"] as? Int {
+                        if let id = moment["pk_record_ID"] as? Int {
                             tempMoment.id = id
                         }
-                        if let username = moment["username"] as? String {
+                        if let username = moment["title"] as? String {
                             tempMoment.username = username
                         }
                         if let description = moment["description"] as? String {
                             tempMoment.description = description
                         }
-                        if let pub_time_interval = moment["pub_time_interval"] as? NSTimeInterval {
-                            tempMoment.pub_time_interval = pub_time_interval
+                        if let imageURL = moment["image"] as? String {
+                            tempMoment.image_url = imageURL
                         }
-                        if let thumbnail_base64 = moment["thumbnail_base64"] as? String {
-                            tempMoment.thumbnail_base64 = thumbnail_base64
+                        if let thumbnailURL = moment["thumbnail"] as? String {
+                            tempMoment.thumbnail_url = thumbnailURL
+                        }
+                        if let createtime = moment["createtime"] as? String {
+                            tempMoment.createtime = createtime
+                        }
+                        if let area = moment["area"] as? Int {
+                            tempMoment.area = area
                         }
                         tempMoments.append(tempMoment)
                     }
                     if tempMoments.count > 0 {
-                        print(tempMoments[0].pub_time_interval)
+                        print(tempMoments[0].area)
                     }
                     dispatch_async(dispatch_get_main_queue(), {
                         if publishedLater == true {

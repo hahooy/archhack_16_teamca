@@ -10,21 +10,26 @@ import Foundation
 
 class Moment {
     var id: Int?
+    var title: String?
     var username: String?
+    var area: Int?
     var description: String?
-    var pub_time_interval: NSTimeInterval?
-    var thumbnail_base64: String?
+    var createtime: String?
+    var image_url: String?
+    var thumbnail_url: String?
     
-    init(id: Int?, username: String?, description: String?,pub_time_interval: NSTimeInterval?,
-         thumbnail_base64: String?) {
+    init(id: Int?, title: String?, username: String?, area: Int?, description: String?, createtime: String?, image_url: String?, thumbnail_url: String?) {
         self.id = id
+        self.title = title
         self.username = username
+        self.area = area
         self.description = description
-        self.pub_time_interval = pub_time_interval
-        self.thumbnail_base64 = thumbnail_base64
+        self.createtime = createtime
+        self.image_url = image_url
+        self.thumbnail_url = thumbnail_url
     }
     
     convenience init() {
-        self.init(id: nil,username: nil,description: nil,pub_time_interval: nil,thumbnail_base64: nil)
+        self.init(id: nil, title: nil, username: nil, area: nil, description: nil, createtime: nil, image_url: nil, thumbnail_url: nil)
     }
 }

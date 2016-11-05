@@ -30,18 +30,12 @@
         }
         $stmt->close();
 
-        echo json_encode(array(
-            "success" => true,
-            "records" => $records
-        ));
+        echo json_encode($records);
     }
 
     if (isset($_SESSION["username"])) {
         get_records();
     } else {
-        echo json_encode(array(
-        "success" => true,
-        "events" => array()
-        ));
+        echo json_encode(array());
     }
 ?>
