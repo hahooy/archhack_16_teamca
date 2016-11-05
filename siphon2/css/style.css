@@ -1,0 +1,79 @@
+.hide {
+    display: none;
+}
+
+.login input {
+    margin-top: 2px;
+}
+
+.login h2 {
+    text-align: center;
+}
+
+.block {
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+    border: 1px solid black;
+}
+
+.item {
+    margin-bottom: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 10px;
+    margin: 2px;
+    border: 1px solid black;
+}
+
+.choose {
+    color: red;
+}
+
+#calendar-table > tbody > tr > td {
+    height: 100px;
+}
+
+.right-align {
+    float: right;
+}
+
+.event {
+    margin-top: 1px;
+}
+
+.low-priority {
+    background-color: #06e4d2;
+}
+
+.medium-priority {
+    background-color: #dfe406;
+}
+
+.high-priority {
+    background-color: #e26508;
+    color: white;
+}
+
+.critical-priority {
+    background-color: #e40606;
+    color: white;
+}
+
+.today {
+    background-color: red;
+    color: white;
+}
+
+.day {
+    padding: 5px;
+}
+
+.small-width {
+    width: 10px;
+}
+
+.large-width {
+    width: 100px;
+}
