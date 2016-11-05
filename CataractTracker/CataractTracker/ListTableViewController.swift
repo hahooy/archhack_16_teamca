@@ -229,13 +229,12 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         }
         
         if let base64String = moment.thumbnail_url {
-            let url = URL(string: "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/uploads/hey/images.jpeg")
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            imageView.image = UIImage(data: data!)
-            let decodedData = NSData(base64EncodedString: base64String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-            let decodedImage = UIImage(data: decodedData!)
-            let aspectRatio = decodedImage!.size.height / decodedImage!.size.width
-            imageHeight = UIScreen.mainScreen().bounds.width * aspectRatio
+            let url = NSURL(string: "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/uploads/hey/images.jpeg")
+            if let data = NSData(contentsOfURL: url!) {
+                let decodedImage = UIImage(data: data)
+                let aspectRatio = decodedImage!.size.height / decodedImage!.size.width
+                imageHeight = UIScreen.mainScreen().bounds.width * aspectRatio
+            }
         }
         return nameLableHeight + imageHeight + descriptionLableHeight + 20
     }
