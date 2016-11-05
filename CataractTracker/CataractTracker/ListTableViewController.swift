@@ -228,8 +228,8 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             descriptionLableHeight = lableSize.height
         }
         
-        if let base64String = moment.thumbnail_url {
-            let url = NSURL(string: "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/uploads/hey/images.jpeg")
+        if let thumbnailURL = moment.thumbnail_url {
+            let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(thumbnailURL)")
             if let data = NSData(contentsOfURL: url!) {
                 let decodedImage = UIImage(data: data)
                 let aspectRatio = decodedImage!.size.height / decodedImage!.size.width
@@ -262,21 +262,22 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         cell.titleLabel?.text = moment.title
         cell.descriptionLable?.text = moment.description
         cell.createTimeLabel?.text = moment.createtime
-        
-        let base64String = moment.thumbnail_url
-        populateImage(cell, imageString: base64String)
+
+        populateImage(cell, imageURL: moment.thumbnail_url)
     }
     
 
     
     // MARK:- Populate Image
     
-    func populateImage(cell:ProfileTableViewCell, imageString: String?) {
-        if imageString != nil {
-            let decodedData = NSData(base64EncodedString: imageString!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-            
-            let decodedImage = UIImage(data: decodedData!)
-            cell.thumbnailView?.image = decodedImage
+    func populateImage(cell:ProfileTableViewCell, imageURL: String?) {
+        if let imageURL = imageURL {
+            print("\(SharingManager.Constant.baseServerURL)\(imageURL)")
+            let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(imageURL)")
+            if let data = NSData(contentsOfURL: url!) {
+                let decodedImage = UIImage(data: data)
+                cell.thumbnailView?.image = decodedImage
+            }
         }
     }
     

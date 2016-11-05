@@ -49,7 +49,7 @@ class SharingManager {
         static let fetchMomentsURL = baseServerURL + "get_records.php/"
         static let fetchPhotoURL = baseServerURL + "fetch-photo/"
         static let logoutURL = baseServerURL + "logout.php/"
-        
+        static let uploadBaseURL = baseServerURL + "uploads/"
      }
     
     
