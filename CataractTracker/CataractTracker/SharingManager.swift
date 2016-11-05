@@ -117,7 +117,6 @@ class SharingManager {
 
                 do {
                     let momentsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSArray
-                    print(momentsJSON)
                     var tempMoments = [Moment]()
                     
                     for moment in momentsJSON {
@@ -147,7 +146,6 @@ class SharingManager {
                         tempMoments.append(tempMoment)
                     }
                     if tempMoments.count > 0 {
-                        print(tempMoments)
                         print(tempMoments[0].area)
                     }
                     dispatch_async(dispatch_get_main_queue(), {

@@ -39,7 +39,6 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         self.tableView.allowsSelection = true
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        print("hey")
         // add a handler to the sharedInstance, so that the tableView is refresh whenever
         // the moments data are updated
         SharingManager.sharedInstance.addMomentsUpdatedHandler { self.tableView.reloadData() }
@@ -271,10 +270,8 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     
     func populateImage(cell:ProfileTableViewCell, imageURL: String?) {
         if let imageURL = imageURL {
-            print("\(SharingManager.Constant.baseServerURL)\(imageURL)")
             let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(imageURL)")
             if let data = NSData(contentsOfURL: url!) {
-                print("!")
                 let decodedImage = UIImage(data: data)
                 cell.thumbnailView?.image = decodedImage
             }
