@@ -43,7 +43,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signinButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7FE-Fx-yBh"/>
-                                    <segue destination="Ksg-co-lOF" kind="show" id="GPY-j3-iyk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,6 +65,7 @@
                     <connections>
                         <outlet property="passcodeTextField" destination="Tsq-SK-1Rd" id="Yxc-DS-ghH"/>
                         <outlet property="userIDTextField" destination="Bn5-jX-v6v" id="QUa-n5-2Ol"/>
+                        <segue destination="Ksg-co-lOF" kind="show" identifier="login to app" id="ir7-5V-yTa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -272,7 +272,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="KsO-nO-oTT" kind="show" id="tDg-5v-ybt"/>
+                        <segue destination="KsO-nO-oTT" kind="relationship" relationship="rootViewController" id="769-sF-iWv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlL-J2-TNx" userLabel="First Responder" sceneMemberID="firstResponder"/>

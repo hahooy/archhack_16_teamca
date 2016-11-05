@@ -39,7 +39,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         self.tableView.allowsSelection = true
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        
+        print("hey")
         // add a handler to the sharedInstance, so that the tableView is refresh whenever
         // the moments data are updated
         SharingManager.sharedInstance.addMomentsUpdatedHandler { self.tableView.reloadData() }
