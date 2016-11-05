@@ -257,8 +257,9 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     func configureCell(cell: ProfileTableViewCell, indexPath: NSIndexPath) {
         let moment = SharingManager.sharedInstance.moments[indexPath.row]
         
-        cell.nameLabel?.text = moment.username
+        cell.titleLabel?.text = moment.title
         cell.descriptionLable?.text = moment.description
+        cell.createTimeLabel?.text = moment.createtime
         
         let timeInterval = moment.pub_time_interval
         populateTimeInterval(cell, timeInterval: timeInterval)
@@ -280,7 +281,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         } else {
             formatter.dateStyle = .ShortStyle
         }
-        cell.timeLabel?.text = formatter.stringFromDate(date)
+        cell.createTimeLabel?.text = formatter.stringFromDate(date)
     }
     
     // MARK:- Populate Image
@@ -290,7 +291,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             let decodedData = NSData(base64EncodedString: imageString!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
             
             let decodedImage = UIImage(data: decodedData!)
-            cell.profileImageView?.image = decodedImage
+            cell.thumbnailView?.image = decodedImage
         }
     }
     
@@ -303,13 +304,13 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         backgroundView.backgroundColor = backgroundColor
         cell.selectedBackgroundView = backgroundView
         
-        cell.nameLabel?.font =  Constant.nameFont
-        cell.nameLabel?.textColor = textColor
-        cell.nameLabel?.backgroundColor = backgroundColor
+        cell.titleLabel?.font =  Constant.nameFont
+        cell.titleLabel?.textColor = textColor
+        cell.titleLabel?.backgroundColor = backgroundColor
         
-        cell.timeLabel?.font = Constant.timeFont
-        cell.timeLabel?.textColor = UIColor.grayColor()
-        cell.timeLabel?.backgroundColor = backgroundColor
+        cell.titleLabel?.font = Constant.timeFont
+        cell.titleLabel?.textColor = UIColor.grayColor()
+        cell.titleLabel?.backgroundColor = backgroundColor
         
         cell.descriptionLable?.font = Constant.descriptionFont
     }

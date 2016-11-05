@@ -140,10 +140,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="descriptionLable" destination="uqK-Wr-UDw" id="8id-Ep-lNa"/>
-                                    <outlet property="nameLabel" destination="sII-VI-DaM" id="ggM-a2-Q7d"/>
-                                    <outlet property="profileImageView" destination="GOK-6o-4yP" id="0ms-eK-MNg"/>
-                                    <outlet property="timeLabel" destination="hb5-Wv-qPq" id="E5a-ia-BTl"/>
                                     <segue destination="Ss2-3h-n75" kind="show" identifier="toPhotoDetails" id="hAc-SD-3p7"/>
                                 </connections>
                             </tableViewCell>
