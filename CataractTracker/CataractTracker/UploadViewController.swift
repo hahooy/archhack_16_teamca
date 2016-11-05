@@ -26,7 +26,7 @@ class UploadViewController: UIViewController {
     @IBAction func dismissKeyboard(sender: UITapGestureRecognizer) {
         descriptionInput.resignFirstResponder()
     }
-     */
+    */
     
 
 
@@ -97,7 +97,7 @@ class UploadViewController: UIViewController {
             }
         }
         
-        let filename = "user-profile.jpg"
+        let filename = "diagnose_image.jpg"
         let mimetype = "image/jpg"
         
         body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)

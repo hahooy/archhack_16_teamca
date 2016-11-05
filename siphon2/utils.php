@@ -50,6 +50,20 @@ function is_login() {
 // Perform necessary security check for the input username and filename.
 function get_full_path($username, $filename) {
     $full_path = sprintf($GLOBALS['UPLOAD_DIR']."%s/%s", $username, $filename);
+    // Ensure we don't overwrite an exsisting file.
+    $increment = '';
+
+    if (strpos($full_path, ".")) {
+        $tokens = explode(".", $full_path);
+        $full_path = $tokens[0];
+        $extension = $tokens[1];
+    } else {
+        $extension = 'jpg';  // Default extension to jpg
+    }
+    while(file_exists($full_path . $increment . '.' . $extension)) {
+        $increment++;
+    }
+    $full_path = $full_path . $increment . '.' . $extension;
     return $full_path;
 }
 

@@ -20,7 +20,8 @@
         // Get the file path on server to store the uploaded file.
         $filename = basename($_FILES['uploadedfile']['name']);
         $full_path = get_full_path($username, $filename);
-        // Store the file.
+
+        // Store the original file in file system.
         if(!move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $full_path)){
             // Failed.
             echo json_encode(array(
@@ -34,7 +35,7 @@
         $image_url = $full_path;
         $thumbnail_url = $full_path;
 
-        // TODO: update detected area here.
+        // TODO: execute mathmatica program and update detected area here.
         $area = 0;
 
         // store record info.

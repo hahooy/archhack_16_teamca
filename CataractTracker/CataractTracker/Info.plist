@@ -7,7 +7,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need to upload images taken by you</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Need to take</string>
+	<string>Need to take picture to diagnose</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

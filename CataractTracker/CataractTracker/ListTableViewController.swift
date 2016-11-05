@@ -61,7 +61,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         if SharingManager.sharedInstance.moments.count > 0 {
             SharingManager.sharedInstance.fetchMoments(publishedEarlier: false, publishedLater: true, spinner: nil, refreshControl: refreshControl)
         } else {
-            SharingManager.sharedInstance.fetchMoments(publishedEarlier: false, publishedLater: false, spinner: scrollToBottomSpinner, refreshControl: refreshControl)
+            SharingManager.sharedInstance.fetchMoments(publishedEarlier: false, publishedLater: false, spinner: nil, refreshControl: refreshControl)
         }
     }
     
@@ -237,7 +237,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         return nameLableHeight + imageHeight + descriptionLableHeight
     }
     
-    
+    /*
     @IBOutlet weak var scrollToBottomSpinner: UIActivityIndicatorView!
     
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -250,6 +250,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             SharingManager.sharedInstance.fetchMoments(publishedEarlier: true, publishedLater: false, spinner: scrollToBottomSpinner, refreshControl: nil)
         }
     }
+     */
     
     
     // MARK:- Configure Cell
