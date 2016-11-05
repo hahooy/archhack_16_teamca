@@ -215,12 +215,6 @@
                             <constraint firstItem="5VF-CA-PeP" firstAttribute="top" secondItem="DE5-JH-ZV7" secondAttribute="bottom" constant="20" id="tmR-Sa-279"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="descriptionLable" destination="jRG-V7-O8S" id="qz4-7y-mCk"/>
-                        <outlet property="nameLabel" destination="5VF-CA-PeP" id="98F-K3-gV1"/>
-                        <outlet property="profileImageView" destination="CZJ-gp-871" id="Bmb-Eb-vRi"/>
-                        <outlet property="timeLabel" destination="bJL-ue-BNA" id="IeY-ZJ-uEv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54m-zc-Udu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
