@@ -1,11 +1,11 @@
 <?php
     include "utils.php";
 
-    if (isset($_POST['username']) && $_POST['username'] != '' 
-        && isset($_POST['title']) && $_POST['title'] != '' 
+    if (isset($_SESSION['username']) &&
+        isset($_POST['title']) && $_POST['title'] != '' 
         && isset($_POST['description']) && $_POST['description'] != ''
         && isset($_FILES['uploadedfile'])) {
-        upload_record($_POST['username'], $_POST['title'], $_POST['description']);
+        upload_record($_SESSION['username'], $_POST['title'], $_POST['description']);
     } else {
         echo json_encode(array(
             "success" => false,
