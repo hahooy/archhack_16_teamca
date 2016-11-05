@@ -262,7 +262,6 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         cell.titleLabel?.text = moment.title
         cell.descriptionLable?.text = moment.description
         cell.createTimeLabel?.text = moment.createtime
-
         populateImage(cell, imageURL: moment.thumbnail_url)
     }
     
@@ -275,6 +274,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             print("\(SharingManager.Constant.baseServerURL)\(imageURL)")
             let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(imageURL)")
             if let data = NSData(contentsOfURL: url!) {
+                print("!")
                 let decodedImage = UIImage(data: data)
                 cell.thumbnailView?.image = decodedImage
             }
