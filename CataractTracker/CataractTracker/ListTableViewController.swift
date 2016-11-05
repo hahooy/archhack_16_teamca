@@ -141,9 +141,9 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
                     uploadVC.hidesBottomBarWhenPushed = true
                 }
             case "toPhotoDetails":
-                if let mapImageDetailsVC = segue.destinationViewController as? MomentDetailViewController {
+                if let momentDetailsVC = segue.destinationViewController as? MomentDetailViewController {
                     if let cellData = sender as? Moment {
-                        mapImageDetailsVC.momentID = cellData.id
+                        momentDetailsVC.momentID = cellData.id
                     }
                 }
                 
@@ -184,9 +184,9 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         //tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
     }
     
-    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("toPhotoDetails", sender: SharingManager.sharedInstance.moments[indexPath.row])
-    }
+//    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+//        performSegueWithIdentifier("toPhotoDetails", sender: SharingManager.sharedInstance.moments[indexPath.row])
+//    }
     
     /*
      override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
