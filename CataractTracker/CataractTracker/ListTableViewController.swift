@@ -170,7 +170,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constant.profileCellIdentifier, forIndexPath: indexPath) as! ProfileTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constant.profileCellIdentifier) as! ProfileTableViewCell
         
         configureCell(cell, indexPath: indexPath)
         tableViewStyle(cell)
