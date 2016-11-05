@@ -22,7 +22,7 @@ CREATE TABLE tags (
     PRIMARY KEY (title)
 ) engine = INNODB DEFAULT character SET = utf8 COLLATE = utf8_general_ci;
 
-CREATE TABLE record (
+CREATE TABLE records (
     pk_record_ID INT UNSIGNED NOT NULL AUTO_INCREMENT,
     title TINYTEXT NOT NULL,
     description TEXT NOT NULL,

@@ -42,6 +42,10 @@
         $stmt->bind_param('sss', $username, $password_encrypted, $email);
         $stmt->execute();
         $stmt->close();
+
+        // Create a directory for this user on the file system.
+        mkdir($GLOBALS["UPLOAD_DIR"].$username);
+
         echo json_encode(array(
             "success" => true,
             "msg" => 'You have successfully registered with our website!'

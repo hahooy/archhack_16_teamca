@@ -14,6 +14,8 @@ if($mysqli->connect_errno) {
     exit;
 }
 
+// Directory for uploading users' files
+$UPLOAD_DIR = "uploads/";
 
 // Make sure the username is alphanumeric with limited other characters.
 function is_valid_username($username) {
@@ -42,6 +44,13 @@ function is_login() {
         header("Location: index.php");
         exit;
     }
+}
+
+// Construct the full file path on the server for a particular filename and username.
+// Perform necessary security check for the input username and filename.
+function get_full_path($username, $filename) {
+    $full_path = sprintf($GLOBALS['UPLOAD_DIR']."%s/%s", $username, $filename);
+    return $full_path;
 }
 
 
