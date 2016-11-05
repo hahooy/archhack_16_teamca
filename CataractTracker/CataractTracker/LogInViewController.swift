@@ -62,11 +62,9 @@ class LogInViewController: UIViewController {
                     print(loginError)
                     return
                 }
-                
                 // login successfully, save user information
-                if let username = json["username"] as? String, let email = json["email"] as? String {
+                if let username = json["username"] as? String {
                     UserInfo.username = username
-                    UserInfo.email = email
                 }
                 dispatch_async(dispatch_get_main_queue(), {
                     self.performSegueWithIdentifier(Constant.segueToApp, sender: self)

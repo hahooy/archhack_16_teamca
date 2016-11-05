@@ -71,7 +71,8 @@ class SharingManager {
             let url:NSURL = NSURL(string: SharingManager.Constant.fetchMomentsURL)!
             let session = NSURLSession.sharedSession()
             let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "GET"
+            request.HTTPMethod = "POST"
+            request.timeoutInterval = 200000
             request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
             request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
