@@ -10,8 +10,8 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnailView: UIImageView!
-    @IBOutlet weak var createTimeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var createTimeLabel: UILabel!
     @IBOutlet weak var descriptionLable: UILabel!
     
     override func awakeFromNib() {

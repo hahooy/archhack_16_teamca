@@ -108,4 +108,6 @@ var headlineFot: UIFont {
     return UIFont(name: "HelveticaNeue-Bold", size: 15)!
 }
 
+let SHADOW_GRAY: CGFloat = 120.0 / 255.0
+
 

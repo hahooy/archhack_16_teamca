@@ -18,10 +18,9 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     
     struct Constant {
         static let profileCellIdentifier = "profileCell"
-        static let nameFont = UIFont(name: "HelveticaNeue-Medium", size: 15)
-        static let timeFont = UIFont.boldSystemFontOfSize(15)
-        static let descriptionFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-    }
+        static let titleFont = UIFont(name: "HelveticaNeue-Medium", size: 18)
+        static let timeFont = UIFont.boldSystemFontOfSize(12)
+        static let descriptionFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody).fontWithSize(10)    }
     
     @IBAction func addPhoto(sender: UIBarButtonItem) {
         let cameraActions = UIAlertController(title: "Upload Photo", message: "Choose the method", preferredStyle: .ActionSheet)
@@ -39,7 +38,6 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         self.tableView.allowsSelection = true
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        print("hey")
         // add a handler to the sharedInstance, so that the tableView is refresh whenever
         // the moments data are updated
         SharingManager.sharedInstance.addMomentsUpdatedHandler { self.tableView.reloadData() }
@@ -212,9 +210,9 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         var descriptionLableHeight: CGFloat = 0
         let lable = UILabel()
         
-        if let name = moment.username {
+        if let name = moment.title {
             lable.text = name
-            lable.font = Constant.nameFont
+            lable.font = Constant.titleFont
             let lableSize = lable.sizeThatFits(CGSize(width: UIScreen.mainScreen().bounds.width, height: CGFloat.max))
             nameLableHeight = lableSize.height
         }
@@ -233,10 +231,11 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             if let data = NSData(contentsOfURL: url!) {
                 let decodedImage = UIImage(data: data)
                 let aspectRatio = decodedImage!.size.height / decodedImage!.size.width
-                imageHeight = UIScreen.mainScreen().bounds.width * aspectRatio
+                imageHeight = 150 * aspectRatio
             }
         }
-        return nameLableHeight + imageHeight + descriptionLableHeight + 20
+        
+        return nameLableHeight + imageHeight + descriptionLableHeight
     }
     
     
@@ -271,10 +270,8 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
     
     func populateImage(cell:ProfileTableViewCell, imageURL: String?) {
         if let imageURL = imageURL {
-            print("\(SharingManager.Constant.baseServerURL)\(imageURL)")
             let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(imageURL)")
             if let data = NSData(contentsOfURL: url!) {
-                print("!")
                 let decodedImage = UIImage(data: data)
                 cell.thumbnailView?.image = decodedImage
             }
@@ -290,13 +287,13 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
         backgroundView.backgroundColor = backgroundColor
         cell.selectedBackgroundView = backgroundView
         
-        cell.titleLabel?.font =  Constant.nameFont
+        cell.titleLabel?.font =  Constant.titleFont
         cell.titleLabel?.textColor = textColor
         cell.titleLabel?.backgroundColor = backgroundColor
         
-        cell.titleLabel?.font = Constant.timeFont
-        cell.titleLabel?.textColor = UIColor.grayColor()
-        cell.titleLabel?.backgroundColor = backgroundColor
+        cell.createTimeLabel?.font = Constant.timeFont
+        cell.createTimeLabel?.textColor = UIColor.grayColor()
+        cell.createTimeLabel?.backgroundColor = backgroundColor
         
         cell.descriptionLable?.font = Constant.descriptionFont
     }

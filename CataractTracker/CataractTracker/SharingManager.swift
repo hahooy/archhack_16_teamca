@@ -41,7 +41,9 @@ class SharingManager {
         static let NumberOfMomentsToFetch: UInt = 10
         static let minimumTimeInterval = 0.000001
         static let maxThumbnailSize: CGFloat = 1000
+
         // static let baseServerURL = "http://localhost/archhack/siphon2/"
+
         static let baseServerURL = "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/"
         static let loginURL = baseServerURL + "login.php/"
         static let searchUserURL = baseServerURL + "search-user/"
@@ -71,7 +73,8 @@ class SharingManager {
             let url:NSURL = NSURL(string: SharingManager.Constant.fetchMomentsURL)!
             let session = NSURLSession.sharedSession()
             let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "GET"
+            request.HTTPMethod = "POST"
+            request.timeoutInterval = 200000
             request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
             request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -116,7 +119,6 @@ class SharingManager {
 
                 do {
                     let momentsJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSArray
-                    print(momentsJSON)
                     var tempMoments = [Moment]()
                     
                     for moment in momentsJSON {
@@ -125,7 +127,10 @@ class SharingManager {
                         if let id = moment["pk_record_ID"] as? Int {
                             tempMoment.id = id
                         }
-                        if let username = moment["title"] as? String {
+                        if let title = moment["title"] as? String {
+                            tempMoment.title = title
+                        }
+                        if let username = moment["username"] as? String {
                             tempMoment.username = username
                         }
                         if let description = moment["description"] as? String {
@@ -146,7 +151,6 @@ class SharingManager {
                         tempMoments.append(tempMoment)
                     }
                     if tempMoments.count > 0 {
-                        print(tempMoments)
                         print(tempMoments[0].area)
                     }
                     dispatch_async(dispatch_get_main_queue(), {
