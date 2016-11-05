@@ -9,7 +9,7 @@
     } else {
         echo json_encode(array(
             "success" => false,
-            "msg" => "Something is missing, check the form you submit."
+            "msg" => sprintf("Something is missing, check the form you submit. username: %s; title: %s; description: %s; uploadedfile: %s.", $_SESSION['username'], $_POST['title'], $_POST['description'], $_FILES['uploadedfile'])
         ));
         exit;
     }

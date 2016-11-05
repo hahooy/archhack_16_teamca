@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need to upload images taken by you</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Need to take</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
