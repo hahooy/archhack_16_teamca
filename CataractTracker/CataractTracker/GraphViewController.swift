@@ -41,7 +41,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
         
         for i in 0..<moments.count {
             
-            let dataEntry = ChartDataEntry(value: Double((moments[i].area)!), xIndex: i)
+            let dataEntry = ChartDataEntry(value: Double((moments[i].area)!), xIndex: moments.count - 1 - i)
             dataEntries.append(dataEntry)
             dataPoints.append(moments[i].createtime!)
         }
