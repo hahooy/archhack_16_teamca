@@ -61,11 +61,11 @@ func formatDate(date: NSDate) ->  String {
 
 
 var mainColor: UIColor {
-    return UIColor(red: 10.0/255.0, green: 60.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+    return UIColor(red: 20.0/255.0, green: 122.0/255.0, blue: 210.0/255.0, alpha: 1.0)
 }
 
 var barTintColor: UIColor {
-    return UIColor(red: 10.0/255.0, green: 60.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+    return UIColor(red: 20.0/255.0, green: 122.0/255.0, blue: 210.0/255.0, alpha: 1.0)
 }
 
 var barTextColor: UIColor {
