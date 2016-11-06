@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="36" y="37.331334332833585"/>
         </scene>
-        <!--View Controller-->
+        <!--Graph View Controller-->
         <scene sceneID="1Ps-TL-4zl">
             <objects>
-                <viewController id="nko-Vd-6Fd" sceneMemberID="viewController">
+                <viewController id="nko-Vd-6Fd" customClass="GraphViewController" customModule="CataractTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QeT-IZ-5x4"/>
                         <viewControllerLayoutGuide type="bottom" id="Unz-e4-Ls9"/>
@@ -100,13 +100,27 @@
                     <view key="view" contentMode="scaleToFill" id="x7o-ea-kw9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zoU-pn-Alf" customClass="LineChartView" customModule="Charts">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zoU-pn-Alf" firstAttribute="leading" secondItem="x7o-ea-kw9" secondAttribute="leading" id="BsI-ir-ViB"/>
+                            <constraint firstAttribute="trailing" secondItem="zoU-pn-Alf" secondAttribute="trailing" id="Uet-sb-xMU"/>
+                            <constraint firstItem="Unz-e4-Ls9" firstAttribute="top" secondItem="zoU-pn-Alf" secondAttribute="bottom" id="h14-Tb-Gy4"/>
+                            <constraint firstItem="zoU-pn-Alf" firstAttribute="top" secondItem="x7o-ea-kw9" secondAttribute="top" constant="20" id="kez-tP-UCW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Image" selectedImage="Image" id="FC6-g7-gQd"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="zoU-pn-Alf" id="Kh7-mS-rEk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9l1-iR-jBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="322"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="321.58920539730138"/>
         </scene>
         <!--Create New-->
         <scene sceneID="e8a-s3-cCQ">
