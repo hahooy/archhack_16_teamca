@@ -11,8 +11,8 @@ import UIKit
 class UploadViewController: UIViewController {
 
 
-    @IBOutlet weak var titleInput: UITextField!
-    @IBOutlet weak var descriptionInput: UITextView!
+    @IBOutlet weak var titleInput: FancyField!
+    @IBOutlet weak var descriptionInput: FancyTextView!
     @IBOutlet weak var imageView: UIImageView!
     var imageToSubmit: UIImage?
 

@@ -18,12 +18,20 @@ class FancyField: UITextField {
         layer.cornerRadius = 2.0
     }
     
+    override func textRectForBounds(bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 10, dy: 5)
+    }
+    
+    override func editingRectForBounds(bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 10, dy: 5)
+    }
+    
 //    override func textRect(forBounds bounds: CGRect) -> CGRect {
 //        return bounds.insetBy(dx: 10, dy: 5)
 //    }
 //    
 //    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-//        return bounds.insetBy(dx: 10, dy: 5)
+//        
 //    }
     
 }
