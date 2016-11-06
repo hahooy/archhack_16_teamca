@@ -16,6 +16,8 @@ class MomentDetailViewController: UIViewController {
     @IBOutlet weak var areaLabel: UILabel!
     @IBOutlet weak var descriptionLable: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewNew: UIImageView!
+    
     
     var moment: Moment!
     
@@ -23,6 +25,9 @@ class MomentDetailViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController!.toolbar.hidden = true
         // Do any additional setup after loading the view.
+        
+        self.navigationController!.toolbar.hidden = true
+        
         titleLabel.text = moment.title
         createTimeLabel.text = moment.createtime
         areaLabel.text = String(moment.area!)
@@ -32,6 +37,13 @@ class MomentDetailViewController: UIViewController {
             if let data = NSData(contentsOfURL: url!) {
                 let decodedImage = UIImage(data: data)
                 imageView.image = decodedImage
+            }
+        }
+        if let originalImageURL = moment.original_image_url {
+            let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(originalImageURL)")
+            if let data = NSData(contentsOfURL: url!) {
+                let decodedImage = UIImage(data: data)
+                imageViewNew.image = decodedImage
             }
         }
         textStyle()

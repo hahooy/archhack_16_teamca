@@ -136,6 +136,9 @@ class SharingManager {
                         if let description = moment["description"] as? String {
                             tempMoment.description = description
                         }
+                        if let original_image_url = moment["original_image"] as? String {
+                            tempMoment.original_image_url = original_image_url
+                        }
                         if let imageURL = moment["image"] as? String {
                             tempMoment.image_url = imageURL
                         }

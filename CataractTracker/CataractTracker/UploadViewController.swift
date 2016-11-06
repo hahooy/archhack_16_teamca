@@ -21,6 +21,8 @@ class UploadViewController: UIViewController {
         self.view.backgroundColor = backgroundColorDarker
         self.navigationController!.toolbar.hidden = true
         imageView.image = imageToSubmit
+        
+        self.navigationController!.toolbar.hidden = true
     }
     
     /*
