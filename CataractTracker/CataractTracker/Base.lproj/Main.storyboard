@@ -161,7 +161,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Create New" id="n1v-8S-SS6">
-                        <barButtonItem key="rightBarButtonItem" title="Upload" id="ClY-Sz-u4F"/>
+                        <barButtonItem key="rightBarButtonItem" title="Upload" id="ClY-Sz-u4F">
+                            <connections>
+                                <action selector="uploadPhotoWithSender:" destination="20Z-Ff-C0A" id="J29-Dq-fjr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionInput" destination="tvx-5z-e4t" id="H32-tD-64E"/>
