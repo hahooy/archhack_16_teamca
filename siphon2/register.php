@@ -45,6 +45,7 @@
 
         // Create a directory for this user on the file system.
         mkdir($GLOBALS["UPLOAD_DIR"].$username);
+        exec("sudo chmod 777 ".$GLOBALS["UPLOAD_DIR"].$username);
 
         echo json_encode(array(
             "success" => true,
