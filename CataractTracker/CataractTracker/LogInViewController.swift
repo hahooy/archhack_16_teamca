@@ -63,9 +63,13 @@ class LogInViewController: UIViewController {
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
                 
                 // login failed
-                if let loginError = json["error"] as? String {
-                    print(loginError)
-                    return
+                if let loginFlag = json["success"] as? Bool {
+                    if !loginFlag {
+                        if let loginError = json["msg"] as? String {
+                            print(loginError)
+                        }
+                        return
+                    }
                 }
                 // login successfully, save user information
                 if let username = json["username"] as? String {
