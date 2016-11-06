@@ -101,7 +101,9 @@ function renderPatients() {
                 jsonData.patients.forEach(function(patient) {
                     $patient = $("<a class='event'>" + patient.username + "</a>");
                     $patient.click(renderRecord);
-                    $container.append($patient);
+                    $div = $("<div></div>");
+                    $div.append($patient);
+                    $container.append($div);
                 });
             } else {
                 alert(jsonData.msg);
