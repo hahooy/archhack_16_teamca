@@ -46,7 +46,7 @@ class GraphViewController: UIViewController, ChartViewDelegate {
             dataPoints.append(moments[i].createtime!)
         }
         
-        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Area")
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
         
