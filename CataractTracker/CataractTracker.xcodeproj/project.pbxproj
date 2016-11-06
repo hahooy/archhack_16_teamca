@@ -18,6 +18,9 @@
 		A85F82BA1DCD913C000A55F8 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F82B91DCD913C000A55F8 /* Moment.swift */; };
 		A85F82BC1DCD970D000A55F8 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F82BB1DCD970D000A55F8 /* ListTableViewController.swift */; };
 		A85F82BE1DCDA297000A55F8 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F82BD1DCDA297000A55F8 /* ProfileTableViewCell.swift */; };
+		A8AC00BE1DCF3F8F00889877 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AC00BD1DCF3F8F00889877 /* GraphViewController.swift */; };
+		A8AC00CE1DCF40DD00889877 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AC00C71DCF40A800889877 /* Charts.framework */; };
+		A8AC00CF1DCF40DD00889877 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8AC00C71DCF40A800889877 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A8D2BD751DCE96E8009156AC /* MomentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2BD741DCE96E8009156AC /* MomentDetailViewController.swift */; };
 		A8DFE7A81DCE854300CCF6CD /* FancyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DFE7A71DCE854300CCF6CD /* FancyTextView.swift */; };
 		A8F4F6E31DCDA5CF00CC3B46 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F6E21DCDA5CF00CC3B46 /* Theme.swift */; };
@@ -25,6 +28,58 @@
 		A8F4F6E91DCE6C3A00CC3B46 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F6E81DCE6C3A00CC3B46 /* FancyField.swift */; };
 		A8F4F6EB1DCE74C900CC3B46 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F6EA1DCE74C900CC3B46 /* FancyView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8AC00C61DCF40A800889877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		A8AC00C81DCF40A800889877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
+		A8AC00CA1DCF40A800889877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120D51D811E6200D14B02;
+			remoteInfo = ChartsRealm;
+		};
+		A8AC00CC1DCF40A800889877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06B120FF1D811F1600D14B02;
+			remoteInfo = ChartsRealmTests;
+		};
+		A8AC00D01DCF40DD00889877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A8AC00D21DCF40DD00889877 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A8AC00CF1DCF40DD00889877 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A0452DC1DCE61930085D65C /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +95,8 @@
 		A85F82B91DCD913C000A55F8 /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
 		A85F82BB1DCD970D000A55F8 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		A85F82BD1DCDA297000A55F8 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		A8AC00BD1DCF3F8F00889877 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../../../Downloads/Charts-2.3.0/Charts.xcodeproj"; sourceTree = "<group>"; };
 		A8D2BD741DCE96E8009156AC /* MomentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentDetailViewController.swift; sourceTree = "<group>"; };
 		A8DFE7A71DCE854300CCF6CD /* FancyTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextView.swift; sourceTree = "<group>"; };
 		A8F4F6E21DCDA5CF00CC3B46 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -53,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8AC00CE1DCF40DD00889877 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +142,7 @@
 				A85F82B21DCD6149000A55F8 /* Modal */,
 				A85F82A01DCD610A000A55F8 /* AppDelegate.swift */,
 				A85F82A71DCD610B000A55F8 /* Assets.xcassets */,
+				A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */,
 				A85F82A91DCD610B000A55F8 /* LaunchScreen.storyboard */,
 				A85F82AC1DCD610B000A55F8 /* Info.plist */,
 			);
@@ -120,8 +179,20 @@
 				0A0452DC1DCE61930085D65C /* UploadViewController.swift */,
 				A85F82BB1DCD970D000A55F8 /* ListTableViewController.swift */,
 				A8D2BD741DCE96E8009156AC /* MomentDetailViewController.swift */,
+				A8AC00BD1DCF3F8F00889877 /* GraphViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		A8AC00C01DCF40A600889877 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8AC00C71DCF40A800889877 /* Charts.framework */,
+				A8AC00C91DCF40A800889877 /* ChartsTests.xctest */,
+				A8AC00CB1DCF40A800889877 /* ChartsRealm.framework */,
+				A8AC00CD1DCF40A800889877 /* ChartsRealmTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A8F4F6E11DCDA5B000CC3B46 /* Util */ = {
@@ -142,10 +213,12 @@
 				A85F82991DCD6109000A55F8 /* Sources */,
 				A85F829A1DCD6109000A55F8 /* Frameworks */,
 				A85F829B1DCD6109000A55F8 /* Resources */,
+				A8AC00D21DCF40DD00889877 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A8AC00D11DCF40DD00889877 /* PBXTargetDependency */,
 			);
 			name = CataractTracker;
 			productName = CataractTracker;
@@ -180,12 +253,49 @@
 			mainGroup = A85F82941DCD6109000A55F8;
 			productRefGroup = A85F829E1DCD610A000A55F8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A8AC00C01DCF40A600889877 /* Products */;
+					ProjectRef = A8AC00BF1DCF40A600889877 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A85F829C1DCD6109000A55F8 /* CataractTracker */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A8AC00C71DCF40A800889877 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = A8AC00C61DCF40A800889877 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A8AC00C91DCF40A800889877 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = A8AC00C81DCF40A800889877 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A8AC00CB1DCF40A800889877 /* ChartsRealm.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChartsRealm.framework;
+			remoteRef = A8AC00CA1DCF40A800889877 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A8AC00CD1DCF40A800889877 /* ChartsRealmTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsRealmTests.xctest;
+			remoteRef = A8AC00CC1DCF40A800889877 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A85F829B1DCD6109000A55F8 /* Resources */ = {
@@ -211,6 +321,7 @@
 				A8F4F6E31DCDA5CF00CC3B46 /* Theme.swift in Sources */,
 				A8F4F6EB1DCE74C900CC3B46 /* FancyView.swift in Sources */,
 				A85F82BE1DCDA297000A55F8 /* ProfileTableViewCell.swift in Sources */,
+				A8AC00BE1DCF3F8F00889877 /* GraphViewController.swift in Sources */,
 				A8D2BD751DCE96E8009156AC /* MomentDetailViewController.swift in Sources */,
 				A85F82A31DCD610A000A55F8 /* LogInViewController.swift in Sources */,
 				A85F82A11DCD610A000A55F8 /* AppDelegate.swift in Sources */,
@@ -223,6 +334,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8AC00D11DCF40DD00889877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = A8AC00D01DCF40DD00889877 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A85F82A41DCD610B000A55F8 /* Main.storyboard */ = {
@@ -338,6 +457,7 @@
 		A85F82B01DCD610B000A55F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZBJ8S3HCJ5;
 				INFOPLIST_FILE = CataractTracker/Info.plist;
@@ -351,6 +471,7 @@
 		A85F82B11DCD610B000A55F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZBJ8S3HCJ5;
 				INFOPLIST_FILE = CataractTracker/Info.plist;
