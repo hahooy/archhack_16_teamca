@@ -143,7 +143,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             case "toPhotoDetails":
                 if let momentDetailsVC = segue.destinationViewController as? MomentDetailViewController {
                     if let cellData = sender as? Moment {
-                        momentDetailsVC.momentID = cellData.id
+                        momentDetailsVC.moment = cellData
                     }
                 }
                 
