@@ -2,25 +2,24 @@
     include "utils.php";
 
     // Function that fetch records.
-    function get_records() {
+    function get_records($username) {
         global $mysqli;
 
         $records = array();
-
-        if (isset($_POST['existing_moments_id'])) {
-
-        }
 
         $stmt = $mysqli->prepare("SELECT *
                                   FROM records
                                   WHERE username = ?
                                   ORDER BY createtime DESC;");
         if(!$stmt) {
-            echo json_encode(array());
+            echo json_encode(array(
+                    "success" => false,
+                    "msg" => "SQL query preparation failed."
+            ));
             exit;
         }
 
-        $stmt->bind_param('s', $_SESSION['username']);
+        $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -32,12 +31,18 @@
         }
         $stmt->close();
 
-        echo json_encode($records);
+        echo json_encode(array(
+                "success" => true,
+                "records" => $records
+        ));
     }
 
-    if (isset($_SESSION["username"])) {
-        get_records();
+    if (isset($_SESSION["username"]) && isset($_POST["username"])) {
+        get_records($_POST["username"]);
     } else {
-        echo json_encode(array());
+        echo json_encode(array(
+                "success" => false,
+                "msg" => "Parameters missing."
+        ));
     }
 ?>
