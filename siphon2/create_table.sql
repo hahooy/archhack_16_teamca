@@ -26,6 +26,7 @@ CREATE TABLE records (
     pk_record_ID INT UNSIGNED NOT NULL AUTO_INCREMENT,
     title TINYTEXT NOT NULL,
     description TEXT NOT NULL,
+    original_image TEXT,
     image TEXT NOT NULL,
     thumbnail TEXT NOT NULL,
     createtime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

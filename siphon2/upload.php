@@ -31,15 +31,17 @@
             exit;
         }
 
-        // path to images.
-        $image_url = $full_path;
-        $thumbnail_url = $full_path;
-
-        // TODO: execute mathmatica program and update detected area here.
+        // TODO: execute mathmatica program and update detected area here
+        $output = exec("sudo runuser -l ubuntu -c './segment.wl " . getcwd() . "/" . $full_path . "'");
         $area = 0;
+        $tokens = explode(".", $full_path);
+        $original_image_url = $full_path;
+        $image_url = $tokens[0] . "_out." . $tokens[1];
+        $thumbnail_url = $image_url;
+
 
         // store record info.
-        $stmt = $mysqli->prepare("INSERT INTO records (title, description, image, thumbnail, username, area) VALUES (?, ?, ?, ?, ?, ?);");
+        $stmt = $mysqli->prepare("INSERT INTO records (title, description, original_image, image, thumbnail, username, area) VALUES (?, ?, ?, ?, ?, ?, ?);");
         if(!$stmt) {
             echo json_encode(array(
                 "success" => false,
@@ -47,7 +49,7 @@
             ));
             exit;
         }
-        $stmt->bind_param('sssssi', $title, $description, $image_url, $thumbnail_url, $username, $area);
+        $stmt->bind_param('ssssssi', $title, $description, $original_image_url, $image_url, $thumbnail_url, $username, $area);
         $stmt->execute();
         $stmt->close();
         echo json_encode(array(
