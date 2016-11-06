@@ -163,7 +163,7 @@
                     <navigationItem key="navigationItem" title="Create New" id="n1v-8S-SS6">
                         <barButtonItem key="rightBarButtonItem" title="Upload" id="ClY-Sz-u4F">
                             <connections>
-                                <action selector="uploadPhotoWithSender:" destination="20Z-Ff-C0A" id="J29-Dq-fjr"/>
+                                <action selector="upload:" destination="20Z-Ff-C0A" id="xfl-Ux-tl8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -297,7 +297,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Hj-9d-d9A">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Hj-9d-d9A">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="koz-ID-KaI"/>
                                 </constraints>

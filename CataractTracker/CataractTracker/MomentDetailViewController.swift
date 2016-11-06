@@ -24,7 +24,7 @@ class MomentDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         titleLabel.text = moment.title
         createTimeLabel.text = moment.createtime
-        areaLabel.text = String(moment.area)
+        areaLabel.text = String(moment.area!)
         descriptionLable.text = moment.description
         if let imageURL = moment.image_url {
             let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(imageURL)")

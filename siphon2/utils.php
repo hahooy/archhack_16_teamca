@@ -7,7 +7,7 @@ session_start();
 date_default_timezone_set("America/Chicago");
 
 // Connect to mysql.
-$mysqli = new mysqli("localhost:3307", "root", "wcw3118703", "tracker");
+$mysqli = new mysqli("localhost:3307", "root", "123456", "tracker");
  
 if($mysqli->connect_errno) {
     printf("Connection Failed: %s\n", $mysqli->connect_error);

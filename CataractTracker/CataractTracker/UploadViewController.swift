@@ -28,8 +28,7 @@ class UploadViewController: UIViewController {
     }
     */
     
-    // upload the photo
-    @IBAction func uploadPhoto(sender: UIBarButtonItem) {
+    @IBAction func upload(sender: AnyObject) {
         
         // quit if no photo available for upload
         guard let image = imageView.image else {
