@@ -28,8 +28,6 @@ class UploadViewController: UIViewController {
     }
     */
     
-
-
     // upload the photo
     @IBAction func uploadPhoto(sender: UIBarButtonItem) {
         
