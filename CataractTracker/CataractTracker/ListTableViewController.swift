@@ -144,6 +144,7 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
                 if let momentDetailsVC = segue.destinationViewController as? MomentDetailViewController {
                     if let cellData = sender as? Moment {
                         momentDetailsVC.moment = cellData
+                        momentDetailsVC.hidesBottomBarWhenPushed = true
                     }
                 }
                 
@@ -225,14 +226,18 @@ class ListTableViewController: UITableViewController, UIImagePickerControllerDel
             descriptionLableHeight = lableSize.height
         }
         
-        if let thumbnailURL = moment.thumbnail_url {
-            let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(thumbnailURL)")
-            if let data = NSData(contentsOfURL: url!) {
-                let decodedImage = UIImage(data: data)
-                let aspectRatio = decodedImage!.size.height / decodedImage!.size.width
-                imageHeight = 150 * aspectRatio
-            }
-        }
+//        if let thumbnailURL = moment.thumbnail_url {
+//            let url = NSURL(string: "\(SharingManager.Constant.baseServerURL)/\(thumbnailURL)")
+//            if let data = NSData(contentsOfURL: url!) {
+//                let decodedImage = UIImage(data: data)
+//                let aspectRatio = decodedImage!.size.height / decodedImage!.size.width
+//                imageHeight = 100 * aspectRatio
+//                
+//            }
+//            
+//        }
+        
+        imageHeight = 100 + 10
         
         return nameLableHeight + imageHeight + descriptionLableHeight
     }
