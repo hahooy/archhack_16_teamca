@@ -7,14 +7,16 @@
 
         $records = array();
 
+        if (isset($_POST['existing_moments_id'])) {
+
+        }
+
         $stmt = $mysqli->prepare("SELECT *
                                   FROM records
-                                  WHERE username = ?;");
+                                  WHERE username = ?
+                                  ORDER BY createtime DESC;");
         if(!$stmt) {
-            echo json_encode(array(
-                "success" => false,
-                "msg" => 'Failed to get records!'
-            ));
+            echo json_encode(array());
             exit;
         }
 

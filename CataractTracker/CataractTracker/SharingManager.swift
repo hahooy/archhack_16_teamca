@@ -42,9 +42,9 @@ class SharingManager {
         static let minimumTimeInterval = 0.000001
         static let maxThumbnailSize: CGFloat = 1000
 
-        // static let baseServerURL = "http://localhost/archhack/siphon2/"
+        //static let baseServerURL = "http://localhost/archhack/siphon2/"
 
-        static let baseServerURL = "http://ec2-54-165-251-2.compute-1.amazonaws.com/siphon2/"
+        static let baseServerURL = "http://ec2-54-173-183-10.compute-1.amazonaws.com/siphon2/"
         static let loginURL = baseServerURL + "login.php/"
         static let searchUserURL = baseServerURL + "search-user/"
         static let uploadMomentURL = baseServerURL + "upload.php/"
@@ -154,11 +154,14 @@ class SharingManager {
                         print(tempMoments[0].area)
                     }
                     dispatch_async(dispatch_get_main_queue(), {
+                        self.moments = tempMoments
+                        /*
                         if publishedLater == true {
                             self.moments = tempMoments + self.moments
                         } else {
                             self.moments += tempMoments
                         }
+                        */
                     })
                 } catch {
                     print("error serializing JSON: \(error)")
