@@ -99,7 +99,8 @@ function renderPatients() {
                 $container.text("");
                 $container.html("<h4>Patients:</h4>");
                 jsonData.patients.forEach(function(patient) {
-                    $patient = $("<a class='event'>" + patient.username + "</a>");
+                    $patient = $("<a class='event'>" + patient.username + "</a>" + 
+                                 "<p class='hide' id='##'>".replace('##', patient.username) + patient.email_address + "</p>");
                     $patient.click(renderRecord);
                     $div = $("<div></div>");
                     $div.append($patient);
@@ -114,6 +115,8 @@ function renderPatients() {
 
 function renderRecord(e) {
     var username = $(this).text().trim();
+    var email = $(this).parent().children('p#' + username).text();
+
     $.ajax({
         type: 'POST',
         url: 'get_patient_records.php',
@@ -125,11 +128,14 @@ function renderRecord(e) {
             if (jsonData.success) {
                 $container = $('#patients-records');
                 $container.text("");
+                $container.html("<h1 class='bottom-border'>Patient: ##</h1>".replace('##', username) +
+                                "<a href='mailto:##'>##</a>".split('##').join(email));
                 jsonData.records.forEach(function(record) {
                     $record = $("<div></div>");
                     $title = $("<h2>##</h2>".replace("##", record.title));
                     $time = $("<h4>##</h4>".replace("##", record.createtime));
                     $area = $("<h4>Area: ##</h4>".replace("##", record.area));
+                    $username = $("<input class='username' type='hidden' name='username' value='##'>".replace("##", record.username));
                     $description = $("<p>##</p>".replace("##", record.description));
                     $originImage = $("<div class='col-md-6'><img src='##' alt='original image' width='450'></div>".replace("##", record.original_image));
                     $diagnosedImage = $("<div class='col-md-6'><img src='##' alt='original image' width='450'></div>".replace("##", record.image));
@@ -137,6 +143,7 @@ function renderRecord(e) {
                     $record.append($title);
                     $record.append($time);
                     $record.append($area);
+                    $record.append();
                     $record.append($description);
                     $row.append($originImage);
                     $row.append($diagnosedImage);
