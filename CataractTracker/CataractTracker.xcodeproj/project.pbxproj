@@ -18,6 +18,7 @@
 		A85F82BA1DCD913C000A55F8 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F82B91DCD913C000A55F8 /* Moment.swift */; };
 		A85F82BC1DCD970D000A55F8 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F82BB1DCD970D000A55F8 /* ListTableViewController.swift */; };
 		A85F82BE1DCDA297000A55F8 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F82BD1DCDA297000A55F8 /* ProfileTableViewCell.swift */; };
+		A8D2BD751DCE96E8009156AC /* MomentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D2BD741DCE96E8009156AC /* MomentDetailViewController.swift */; };
 		A8DFE7A81DCE854300CCF6CD /* FancyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DFE7A71DCE854300CCF6CD /* FancyTextView.swift */; };
 		A8F4F6E31DCDA5CF00CC3B46 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F6E21DCDA5CF00CC3B46 /* Theme.swift */; };
 		A8F4F6E71DCE6C0600CC3B46 /* FancyBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F6E61DCE6C0600CC3B46 /* FancyBtn.swift */; };
@@ -39,6 +40,7 @@
 		A85F82B91DCD913C000A55F8 /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
 		A85F82BB1DCD970D000A55F8 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		A85F82BD1DCDA297000A55F8 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		A8D2BD741DCE96E8009156AC /* MomentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentDetailViewController.swift; sourceTree = "<group>"; };
 		A8DFE7A71DCE854300CCF6CD /* FancyTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextView.swift; sourceTree = "<group>"; };
 		A8F4F6E21DCDA5CF00CC3B46 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A8F4F6E61DCE6C0600CC3B46 /* FancyBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyBtn.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A85F82A21DCD610A000A55F8 /* LogInViewController.swift */,
 				0A0452DC1DCE61930085D65C /* UploadViewController.swift */,
 				A85F82BB1DCD970D000A55F8 /* ListTableViewController.swift */,
+				A8D2BD741DCE96E8009156AC /* MomentDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				A8F4F6E31DCDA5CF00CC3B46 /* Theme.swift in Sources */,
 				A8F4F6EB1DCE74C900CC3B46 /* FancyView.swift in Sources */,
 				A85F82BE1DCDA297000A55F8 /* ProfileTableViewCell.swift in Sources */,
+				A8D2BD751DCE96E8009156AC /* MomentDetailViewController.swift in Sources */,
 				A85F82A31DCD610A000A55F8 /* LogInViewController.swift in Sources */,
 				A85F82A11DCD610A000A55F8 /* AppDelegate.swift in Sources */,
 				A8DFE7A81DCE854300CCF6CD /* FancyTextView.swift in Sources */,
