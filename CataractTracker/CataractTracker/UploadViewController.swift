@@ -19,6 +19,7 @@ class UploadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = backgroundColorDarker
+        self.navigationController!.toolbar.hidden = true
         imageView.image = imageToSubmit
     }
     
