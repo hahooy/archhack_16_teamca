@@ -125,17 +125,19 @@ function renderRecord(e) {
                 $container = $('#patients-records');
                 $container.text("");
                 jsonData.records.forEach(function(record) {
-                    $record = $("<div>");
+                    $record = $("<div></div>");
                     $title = $("<h2>##</h2>".replace("##", record.title));
                     $time = $("<h4>##</h4>".replace("##", record.createtime));
                     $description = $("<p>##</p>".replace("##", record.description));
                     $originImage = $("<div class='col-md-6'><img src='##' alt='original image' width='450'></div>".replace("##", record.original_image));
-                    $diagnosedImage = $("<div class='col-md-6'><img src='##' alt='original image' width='450'></div>".replace("##", record.original_image));
+                    $diagnosedImage = $("<div class='col-md-6'><img src='##' alt='original image' width='450'></div>".replace("##", record.image));
+                    $row = $("<div class='row'></div>");
                     $record.append($title);
                     $record.append($time);
                     $record.append($description);
-                    $record.append($originImage);                    
-                    $record.append($diagnosedImage);                    
+                    $row.append($originImage);
+                    $row.append($diagnosedImage);
+                    $record.append($row);
                     $container.append($record);
                 });
             } else {
